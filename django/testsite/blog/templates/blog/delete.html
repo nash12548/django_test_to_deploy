@@ -1,0 +1,20 @@
+{% extends 'bace_css.html' %}
+
+{% block body %}
+    {% if request.user.is_authenticated and request.user.is_staff and queryset.user == request.user %}
+
+        <h1>{{ title }}</h1>
+        <h4>Do you want to delete fallowing :</h4>
+        <h3>{{ queryset.title }}</h3>
+
+        <form method="POST">
+            {% csrf_token %}
+            <button class="btn btn-danger">Yes Delete</button>
+        </form>
+
+
+    {% else %}
+        <h3>You cant access to this page </h3>
+    {% endif %}
+
+{% endblock %}

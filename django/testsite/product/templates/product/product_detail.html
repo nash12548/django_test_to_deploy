@@ -1,0 +1,57 @@
+{% extends  'product/bace_css.html' %}
+{% block body %}
+
+    <div class="text-center">
+        <h1> {{ object }}</h1>
+        <p>
+            {#        {% for i in obj %}#}
+            {#        {% if i.id == object.id %}#}
+            {{ object.product_description }}
+            {#        {% endif %}#}
+            {#    {% endfor %}#}
+            {#    {{ ob }}#}
+        </p>
+    </div>
+    <div class="text-center">
+        <div class="container">
+        <html>
+        <head>
+
+            <style>
+                body {
+                    margin: 25px;
+                }
+
+                div.polaroid {
+                    width: 54.5%;
+                    background-color: white;
+                    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                    margin-bottom: 25px;
+                }
+
+                div.container {
+                    text-align: center;
+                    padding: 10px 20px;
+                }
+            </style>
+        </head>
+        <body>
+
+        <h2>Responsive Polaroid Images / Cards</h2>
+
+        <div class="polaroid">
+            <img src="../../static/product/{{ object.title }}_{{ object.pk }}.jpg" alt="My image">
+            {#  <img src="img_5terre.jpg" alt="5 Terre" style="width:100%">#}
+            <div class="container">
+                <p>Iamge</p>
+            </div>
+            </div>
+
+
+        </body>
+        </html>
+
+    </div>
+    </div>
+
+{% endblock %}

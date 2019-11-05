@@ -1,0 +1,13 @@
+{% extends 'bace_css.html' %}
+
+{% block body %}
+    <h2>{{ pk }}</h2>
+{#    <h3>{{ queryset.title }}</h3>#}
+    {% include 'blog/list_card_in_line.html' with blog_post=queryset truncatewords=False linebreaks=True %}
+
+    {% if request.user.is_authenticated and request.user.is_staff and queryset.user == request.user %}
+        <a href="{{ queryset.get_delete_url }}">Delete</a>
+        <a href="{{ queryset.get_edit_url }}">Edit</a>
+
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'bace_css.html' %}
+
+{% block body %}
+     <div class="container">
+{#     <div class="row">#}
+{#     <div class="col-6 mx-auto">#}
+    <h1 xmlns="http://www.w3.org/1999/html">{{ title }}</h1>
+    {% if request.user.is_authenticated and request.user.is_staff %}
+        <h6>With login you can just see you post
+            for show all posts logout please </h6>
+
+        {% for obj in queryset reversed %}
+            {% if obj.user == request.user %}
+
+                <ul>
+                    {% include 'blog/list_card_in_line.html' with blog_post=obj truncatewords=True linebreaks=False %}
+                </ul>
+            {% endif %}
+        {% endfor %}
+
+    {% else %}
+
+        {% for obj in queryset reversed %}
+            {% include 'blog/list_card_in_line.html' with blog_post=obj truncatewords=True linebreaks=False%}
+
+        {% endfor %}
+
+    {% endif %}
+
+{#     </div>#}
+     </div>
+{#     </div>#}
+{% endblock %}

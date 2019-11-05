@@ -1,0 +1,22 @@
+{#<ul><a href="{{ blog_post.get_absolute_url }}"> {{ blog_post.title }}</a></ul>#}
+
+
+<div class="card text-gray mb-2 border border-info " style="max-width: 100rem;">
+    <div class="card-header text-info">{{ blog_post.user }}</div>
+    <div class="card-body">
+        <h5 class="card-title">{{ blog_post.title }}</h5>
+        {% if truncatewords and linebreaks %}
+            <p class="card-text">{{ blog_post.text |linebreaks|truncatewords:42 }}</p>
+        {% elif linebreaks %}
+            <p class="card-text">{{ blog_post.text |linebreaks}}</p>
+        {% elif truncatewords %}
+            <p class="card-text ">{{ blog_post.text |truncatewords:42 }}</p>
+            <a href="{{ blog_post.get_absolute_url }}" class="card-link text-warning">Read more</a>
+        {% else %}
+            <p class="card-text ">{{ blog_post.text }}</p>
+            <a href="{{ blog_post.get_absolute_url }}" class="card-link text-warning">Read more</a>
+        {% endif %}
+
+
+    </div>
+</div>

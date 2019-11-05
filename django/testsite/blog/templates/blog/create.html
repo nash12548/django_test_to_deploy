@@ -1,0 +1,12 @@
+{% extends 'bace_css.html' %}
+
+{% block body %}
+    <h1>{{ title }}</h1>
+
+    <form method="POST">{% csrf_token %}
+
+        {{ form.as_p }}
+        <button type="submit">Post</button>
+
+    </form>
+{% endblock %}

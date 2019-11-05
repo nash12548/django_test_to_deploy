@@ -1,0 +1,33 @@
+{% extends 'bace_css.html' %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block body %}
+    <h1 class="text-center">Home Page</h1>
+
+    {{ user }}
+    {{ user.is_authenticated }}
+    {{ request.path }}
+    {% if user.is_authenticated %}
+        <h2>You Login</h2>
+    {% endif %}
+
+
+    <html>
+    <body>
+
+    <h2>JavaScript Math.random()</h2>
+
+
+    <p id="demo"></p>
+
+    <script>
+        document.getElementById("demo").innerHTML = Math.random();
+    </script>
+
+    </body>
+    </html>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>product</title>
+</head>
+{% for obj in object_list %}
+{#<a href="http://127.0.0.1:8000/product/{{ obj.id }}" > {{ obj.title }} <br/></a>#}
+<a href="{{ obj.get_absolute_url }}" > {{ obj.title }} <br/></a>
+{% endfor %}
+{#<div>#}
+{#{{ a }}#}
+{#</div>#}
+<body>
+
+</body>
+</html>
