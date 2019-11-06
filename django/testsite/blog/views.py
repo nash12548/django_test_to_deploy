@@ -128,3 +128,7 @@ def test2_page(request):
     template_name = 'blog/test2.html'
     return render(request, template_name ,{})
 
+def test3_page(request):
+    template_name = 'index.html'
+    return render(request, template_name ,{})
+
